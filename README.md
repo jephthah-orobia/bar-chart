@@ -2,7 +2,7 @@
 
 A sample project by Jephthah M. Orobia as partial requirement for the Data Visualization certification of freeCodeCamp.org
 
-## view demo: https://jephthah-orobia.github.io/demo/data-visualization/bar-chart/index.html
+## view demo: https://jephthah-orobia.github.io/bar-chart/
 
 ---
 
