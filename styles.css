@@ -1,3 +1,114 @@
-svg rect {
-  fill: blue;
+:root {
+  --bg: #e0fbfc;
+  --fg: #293241;
+  --accent1: #ee6c4d;
+  --accent2: #3d5a80;
+  --accent3: #98c1d9;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+}
+
+body {
+  padding: 1rem;
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(45deg, var(--bg), var(--accent2), var(--accent3));
+  color: var(--fg);
+}
+
+#please-wait {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  background: var(--bg);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--fg);
+}
+
+#spinner {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background: radial-gradient(
+      var(--bg) 0%,
+      var(--bg) 50%,
+      transparent 50.1%,
+      transparent 100%
+    ),
+    conic-gradient(transparent 0deg, transparent 30deg, var(--accent1) 360deg);
+  animation-name: rotateSpinner;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.container {
+  width: fit-content;
+  height: fit-content;
+  margin: auto;
+  background-color: var(--bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  box-shadow: 0px 0px 100px 2px var(--accent2);
+  text-align: center;
+  z-index: 3000;
+}
+
+svg {
+  background-color: var(--bg);
+}
+
+.bar,
+.tick {
+  fill: var(--accent1);
+}
+
+.bar:hover {
+  fill: var(--accent2);
+}
+
+#tooltip {
+  position: absolute;
+  padding: 1rem;
+  background-color: var(--accent3);
+  color: var(--fg);
+  box-shadow: 0px 0px 5px 2px;
+  visibility: hidden;
+  border-radius: 0.5rem;
+}
+
+.axisName {
+  stroke: var(--accent2);
+  fill: var(--accent2);
+  font-size: 1.2rem;
+}
+.domain,
+.tick,
+.tick line {
+  stroke: var(--fg);
+}
+
+@keyframes rotateSpinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
